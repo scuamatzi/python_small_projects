@@ -1,0 +1,53 @@
+from enum import Enum, auto, StrEnum
+
+
+class Color(Enum):
+    RED = 1
+    GREEN = 2
+    BLUE = 3
+
+
+class Status(Enum):
+    STARTED = auto()
+    RUNNING = auto()
+    DONE = auto()
+
+
+class Role(StrEnum):
+    ADMIN = "admin"
+    USER = "user"
+
+
+print(Color.RED)
+
+print("\n" + "=" * 35)
+
+print(Color.RED.name, Color.RED.value)
+print("\n" + "=" * 35)
+
+for color in Color:
+    print(color.name)
+print("\n" + "=" * 35)
+
+print(Color.RED == Color.GREEN)
+print("\n" + "=" * 35)
+
+if Color.RED is Color.RED:
+    print("matched!!")
+print("\n" + "=" * 35)
+
+print(list(Status))
+print("\n" + "=" * 35)
+
+print(Role.ADMIN)
+print("\n" + "=" * 35)
+
+print(list(Role))
+print("\n" + "=" * 35)
+
+print(list(Color))
+print("\n" + "=" * 35)
+
+print(Color.RED)
+print(Status.STARTED)
+print(Role.ADMIN)
