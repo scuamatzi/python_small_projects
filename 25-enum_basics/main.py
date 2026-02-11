@@ -1,7 +1,8 @@
-from enum import Enum, auto, StrEnum
+from enum import Enum, auto, StrEnum,IntEnum
 
 
 class Color(Enum):
+#class Color(IntEnum):
     RED = 1
     GREEN = 2
     BLUE = 3
