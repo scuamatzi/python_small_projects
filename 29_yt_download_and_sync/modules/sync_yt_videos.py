@@ -32,12 +32,16 @@ def sync_videos(original_path):
             sys.exit(1)
 
     # """ Copy videos to cloud """
-    print(f"\nCopying to {cloud_path}")
-    try:
-        shutil.copytree(original_path, cloud_path, dirs_exist_ok=True)
-    except Exception as e:
-        print(f"Error copying videos to cloud:  {e}")
-        sys.exit(1)
+    # Ask if it should be copied to pCloudDrive
+    answer = input("Do you want to copy video to pcloud? ").strip()
+
+    if answer in ["y", "yes"]:
+        print(f"\nCopying to {cloud_path}")
+        try:
+            shutil.copytree(original_path, cloud_path, dirs_exist_ok=True)
+        except Exception as e:
+            print(f"Error copying videos to cloud:  {e}")
+            sys.exit(1)
 
     # """ Move videos to local """
     print(f"\nMoving to {local_path}")
